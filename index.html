@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm Hoạt Động Ngoại Khóa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="images/LOGO2.png" class="activity-image logo">
+
+            <h1>Tìm kiếm Hoạt Động Ngoại Khóa</h1>
+        </div>
+        <div class="header-right">
+            <!-- Search Bar -->
+            <form>
+                <div class="search">
+                    <span class="search-icon material-symbols-outlined">search</span> 
+                    <input class="search-input" type="search" placeholder="Tìm kiếm">
+                </div>
+            </form>
+            <!-- Search Bar -->
+        </div>
+    </header>
+    
+    <nav id="filter">
+        <button class="filter-button">Filter</button>
+        <div class="filter-content">
+            <div class="filter-category">
+                <h4>Thể Loại</h4>
+                <button class="tag-button" data-tag="competition">Cuộc thi</button>
+                <button class="tag-button" data-tag="project">Dự án</button>
+            </div>
+            <div class="filter-category">
+                <h4>Chủ Đề</h4>
+                <button class="tag-button" data-tag="healthcare">Y tế</button>
+                <button class="tag-button" data-tag="economics">Kinh tế</button>
+                <button class="tag-button" data-tag="science">Khoa học</button>
+                <button class="tag-button" data-tag="environment">Môi trường</button>
+                <button class="tag-button" data-tag="arts">Nghệ thuật</button>
+                <button class="tag-button" data-tag="media">Truyền thông</button>
+                <button class="tag-button" data-tag="charity">Từ thiện</button>
+            </div>
+            <button class="reset-button">Reset</button>
+        </div>
+    </nav>
+
+    <!-- Activities -->
+    <main id="activities">
+        <div class="activity" data-tags="science">
+            <img src="images/sayhi.jpg" alt="Innovation Competition" class="activity-image">
+            <h3>Innovation Competition</h3>
+            <p>Location: Nationwide</p>
+            <p>Deadline: 15/09/2024</p>
+            <a href="#">More Info</a>
+        </div>
+        <div class="activity" data-tags="science, hanoi">
+            <img src="images/" alt="Science Fair 2024" class="activity-image">
+            <h3>Science Fair 2024</h3>
+            <p>Location: Hanoi</p>
+            <p>Deadline: 30/09/2024</p>
+            <a href="#">More Info</a>
+        </div>
+        <div class="activity" data-tags="science, hanoi">
+            <img src="images/" alt="Science Fair 2024" class="activity-image">
+            <h3>Science Fair 2024</h3>
+            <p>Location: Hanoi</p>
+            <p>Deadline: 30/09/2024</p>
+            <a href="#">More Info</a>
+        </div>
+        <div class="activity" data-tags="science">
+            <img src="images/" alt="Science Fair 2024" class="activity-image">
+            <h3>Science Fair 2024</h3>
+            <p>Location: Hanoi</p>
+            <p>Deadline: 30/09/2024</p>
+            <a href="#">More Info</a>
+        </div>
+        <div class="activity" data-tags="project, environment, science">
+            <img src="images/EcoYouthAI.jpg" class="activity-image">
+            <h3>EcoAl Youth Innovators </h3>
+            <p>EcoAI Youth Innovators, hay EYI, là một tổ chức về nghiên cứu và xử lí các vấn đề về môi trường bằng việc sử dụng công nghệ AI được một nhóm các bạn học sinh THPT ở TPHCM cùng chung đam mê về khoa học lập nên.</p>
+            <p>Location: Nationwide</p>
+            <p>Vị trí tuyển: HR, Design</p>
+            <p>Deadline: 30/09/2024</p>
+            <a href="https://www.facebook.com/profile.php?id=61563603216350">More Info</a>
+            <div class="activity-tags">
+                <span class="tag">Project</span>
+                <span class="tag">Environment</span>
+                <span class="tag">Science</span>
+            </div>
+        </div>
+        <div class="activity" data-tags="science, hanoi">
+            <img src="images/" alt="Science Fair 2024" class="activity-image">
+            <h3>Science Fair 2024</h3>
+            <p>Location: Hanoi</p>
+            <p>Deadline: 30/09/2024</p>
+            <a href="#">More Info</a>
+        </div>
+        
+    </main>
+    <footer>
+        <p>Thông tin liên hệ:</p>
+        <p>Email: timkiemhdnk@gmail.com</p>
+        <p>SDT: +84942299324</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
