@@ -9,26 +9,31 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Toggle filter content visibility when the filter button is clicked
     filterButton.addEventListener("click", function() {
-        if (filterContent.style.display === "none" || filterContent.style.display === "") {
-            filterContent.style.display = "block";
-        } else {
-            filterContent.style.display = "none";
-        }
+        filterContent.style.display = filterContent.style.display === "block" ? "none" : "block";
     });
 
     // Handle tag button clicks
     document.querySelectorAll('.tag-button').forEach(button => {
         button.addEventListener('click', function() {
             const tag = this.getAttribute('data-tag');
-            const isTypeCategory = this.closest('.filter-category').querySelector('h4').innerText === 'TYPE';
+            const isTypeCategory = this.closest('.filter-category').querySelector('h4').innerText === 'Thể Loại';
+
+            if (isTypeCategory) {
+                // Clear only TYPE category tags
+                selectedTags.forEach(existingTag => {
+                    const existingButton = document.querySelector(`.tag-button[data-tag="${existingTag}"]`);
+                    const isExistingTypeCategory = existingButton.closest('.filter-category').querySelector('h4').innerText === 'Thể Loại';
+                    if (isExistingTypeCategory) {
+                        existingButton.classList.remove('active');
+                        selectedTags.delete(existingTag);
+                    }
+                });
+            }
 
             if (selectedTags.has(tag)) {
                 selectedTags.delete(tag);
                 this.classList.remove('active');
             } else {
-                if (isTypeCategory) {
-                    selectedTags.clear(); // Clear all selected tags in the TYPE category
-                }
                 selectedTags.add(tag);
                 this.classList.add('active');
             }
@@ -43,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll('.tag-button').forEach(button => {
             button.classList.remove('active');
         });
+        searchInput.value = '';
         filterActivities();
     });
 
@@ -65,6 +71,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initially show all activities
     filterActivities();
 
-    // Add event listener to the search bar
-    searchInput.addEventListener('input', filterActivities);
+    // Add event listener for pressing "Enter" in the search bar
+    searchInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent form submission or page reload
+            filterActivities(); // Trigger filtering
+        }
+    });
 });
