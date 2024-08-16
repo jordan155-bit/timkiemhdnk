@@ -71,6 +71,16 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initially show all activities
     filterActivities();
 
+    // Add event listener for input changes in the search bar
+    searchInput.addEventListener('input', function() {
+        filterActivities(); // Automatically filter on input change
+        
+        // If search input is empty, reset to default
+        if (searchInput.value === '') {
+            filterActivities();
+        }
+    });
+
     // Add event listener for pressing "Enter" in the search bar
     searchInput.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
